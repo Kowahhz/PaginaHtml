@@ -6,9 +6,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>landing Page</title>
-  <link rel="stylesheet" href="src/css/reset.css">
+  <link rel="stylesheet" href="materialize/css/reset.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css%22%3E">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" 
   integrity="sha512-EK98+HT2kHdL/KELrTQGdFtUXlWZhjLUP8uNQOyzV0r6Gv/LEyG+tb2+Jke4ZChgz7lLsdP6+BzqacdlItnVw=="
@@ -84,17 +84,17 @@
       <a href="#" class="brand-logo"><img width="80" height="65" src="https://cdnx.jumpseller.com/onedrop/image/26202865/resize/640/640?1660075371" alt="Logo"></a>
       <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="#">Inicio</a></li>
-        <li><a href="#">Productos</a></li>
-        <li><a href="#">Youtube</a></li>
-        <li><a href="#">Encuenta</a></li>
-        <li><a href="#">Contacto</a></li>
+        <li><a href="#Inicio">Inicio</a></li>
+        <li><a href="#Producto">Productos</a></li>
+        <li><a href="#Youtube">Youtube</a></li>
+        <li><a href="#Encuesta">Encuenta</a></li>
+        <li><a href="#Contacto">Contacto</a></li>
       </ul>
     </div>
   </nav>
 
 
-  <div class="container" style="padding-top: 64px;">
+  <div class="container" style="padding-top: 64px;"id="Inicio">
     <div class="row centered">
       <h1 class="title center-align">☕﹄Café Gold﹃☕</h1>
     </div>
@@ -112,7 +112,7 @@
       </div>
     </div>
 
-    <div class="col s12 m4 center-align">
+    <div class="col s12 m4 center-align"id="Producto">
       <h4>¿Por qué es bueno tomar café?</h4>
     </div>
 
@@ -153,7 +153,7 @@
       </div>
     </div>
 
-    <br>
+    <br id="Youtube">
 
 
     <div class="card-panel brown lighten-3">
@@ -161,7 +161,7 @@
         <div class="col s12 m4 center-align">
           <br>
           <h4 style="color: #FFFFFF;">♨↽Youtube➤🎬</h4>
-          <br>
+          <br id="Encuesta">
         </div>
 
         <iframe width="1046" height="441" src="https://www.youtube.com/embed/ZZYgp_mr6Ks"
@@ -170,7 +170,8 @@
           allowfullscreen></iframe>
       </div>
     </div>
-
+    
+    
 
     <div style="background-color: #FFFFFF; margin-bottom:15px ;margin: 15px;">
       <div class="container">
@@ -201,9 +202,11 @@
                 <span>Espresso</span>
               </label>
             </p>
+            
             <button class="btn waves-effect waves-light" type="submit" name="action">Enviar
               <i class="material-icons right"></i>
             </button>
+            <br>
           </form>
           <div class="col s12 m6 right-images">
             <img
@@ -221,21 +224,22 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     </div>
     <footer>
-      <div class="container center-align">
+      <div class="container center-align" id="Contacto">
         <h4 style="color: #FFFFFF;">¿Te gustaría recibir nuestras promociones?</h4>
         <form>
           <input type="text" name="name" placeholder="Nombre">
           <input type="email" name="email" placeholder="Correo electrónico">
           <input type="tel" name="phone" placeholder="Número de teléfono">
-          <button type="submit">Enviar</button>
-        </form>
-        <a href="https://www.facebook.com/">
+          <button type="submit">Enviar</button> <br>
+        </form> <br>
+        <br>
+        <a href="https://www.facebook.com/CafeGoldChile" style="color:#b37736">
           <i class="fab fa-facebook fa-2x"></i>
         </a>
-        <a href="https://twitter.com/">
+        <a href="https://twitter.com/Comunidad_Gold" style="color:#b37736">
           <i class="fab fa-twitter fa-2x"></i>
         </a>
-        <a href="https://www.instagram.com/">
+        <a href="https://www.instagram.com/cafe_gold/" style="color:#b37736">
           <i class="fab fa-instagram fa-2x"></i>
         </a>
       </div>
