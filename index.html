@@ -6,16 +6,17 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>landing Page</title>
+  <script src="scripts.js"></script>
   <link rel="stylesheet" href="materialize/css/reset.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" 
-  integrity="sha512-EK98+HT2kHdL/KELrTQGdFtUXlWZhjLUP8uNQOyzV0r6Gv/LEyG+tb2+Jke4ZChgz7lLsdP6+BzqacdlItnVw=="
-  crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    integrity="sha512-EK98+HT2kHdL/KELrTQGdFtUXlWZhjLUP8uNQOyzV0r6Gv/LEyG+tb2+Jke4ZChgz7lLsdP6+BzqacdlItnVw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"
-  integrity="sha512-X1rptv8ZRJtWv3H+sP3Jyj1hZkyk8UJEr6LWE1/s51c+wy3h/OedCmXNq3bJdCtG6gKnpUB+u6pmZWY19dKBaA==" 
-  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    integrity="sha512-X1rptv8ZRJtWv3H+sP3Jyj1hZkyk8UJEr6LWE1/s51c+wy3h/OedCmXNq3bJdCtG6gKnpUB+u6pmZWY19dKBaA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <link rel="stylesheet" href="src/css/mystyle.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <style>
@@ -57,7 +58,8 @@
 
     footer input[type="text"],
     footer input[type="email"],
-    footer input[type="tel"] {
+    footer input[type="tel"],
+    footer input[type="number"] {
       width: 100%;
       margin-bottom: 10px;
       padding: 5px;
@@ -81,7 +83,11 @@
 <body>
   <nav>
     <div class="nav-wrapper">
-      <a href="#" class="brand-logo"><img width="80" height="65" src="https://cdnx.jumpseller.com/onedrop/image/26202865/resize/640/640?1660075371" alt="Logo"></a>
+      <a href="#" class="brand-logo"><img width="80" height="65"
+          src="https://cdnx.jumpseller.com/onedrop/image/26202865/resize/640/640?1660075371" alt="Logo"></a>
+      <br>
+      <button id="aumentarFuenteBtn">Aumentar tamaño de fuente</button>
+      
       <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
         <li><a href="#Inicio">Inicio</a></li>
@@ -94,7 +100,7 @@
   </nav>
 
 
-  <div class="container" style="padding-top: 64px;"id="Inicio">
+  <div class="container" style="padding-top: 64px;" id="Inicio">
     <div class="row centered">
       <h1 class="title center-align">☕﹄Café Gold﹃☕</h1>
     </div>
@@ -112,7 +118,7 @@
       </div>
     </div>
 
-    <div class="col s12 m4 center-align"id="Producto">
+    <div class="col s12 m4 center-align" id="Producto">
       <h4>¿Por qué es bueno tomar café?</h4>
     </div>
 
@@ -125,6 +131,7 @@
           , mejorar la función cognitiva y aumentar los niveles de energía. Sin embargo, es importante recordar que el
           exceso de
           café puede ser perjudicial para la salud, y que es necesario tomarlo con moderación.</p>
+        <br>
       </div>
     </div>
   </div>
@@ -170,8 +177,8 @@
           allowfullscreen></iframe>
       </div>
     </div>
-    
-    
+
+
 
     <div style="background-color: #FFFFFF; margin-bottom:15px ;margin: 15px;">
       <div class="container">
@@ -202,7 +209,7 @@
                 <span>Espresso</span>
               </label>
             </p>
-            
+
             <button class="btn waves-effect waves-light" type="submit" name="action">Enviar
               <i class="material-icons right"></i>
             </button>
@@ -227,12 +234,108 @@
       <div class="container center-align" id="Contacto">
         <h4 style="color: #FFFFFF;">¿Te gustaría recibir nuestras promociones?</h4>
         <form>
-          <input type="text" name="name" placeholder="Nombre">
+          <input type="text" name="name" placeholder="Nombre" id="Nombre">
+          <input type="text" name="apellido" placeholder="Apellido" id="Apellido">
           <input type="email" name="email" placeholder="Correo electrónico">
           <input type="tel" name="phone" placeholder="Número de teléfono">
+          <input type="number" name="age" placeholder="Edad">
+          <input type="week" name="week" placeholder="semana">
+          <input type="month" name="month" placeholder="mes">
+          <button type="button" id="btn">Registra</button>
           <button type="submit">Enviar</button> <br>
+          <span id="sBtnAccion"></span>
         </form> <br>
         <br>
+
+
+        <div id="registros"></div>
+        <script>
+          // Obtén una referencia al contenedor de registros
+          var registrosContainer = document.getElementById('registros');
+
+          // Esto para crear un elemento de registro
+          function crearRegistroElement(nombre, apellido, email, phone, age, week, month) {
+            var registroElement = document.createElement('div');
+            registroElement.classList.add('registro');
+
+            //El código crea un párrafo de texto y lo agrega a un elemento existente en la página web. El texto del párrafo 
+            //contiene información como el nombre, apellido, email, teléfono, edad, semana y mes.
+            var infoElement = document.createElement('p');
+            infoElement.textContent = 'Nombre: ' + nombre + ' Apellido: ' + apellido + ' Email: ' + email + ' Teléfono: ' + phone + ' Edad: ' + age + ' Semana: ' + week + ' Mes: ' + month;
+            registroElement.appendChild(infoElement);
+
+            //El código crea un botón "Eliminar" y le asigna un evento de clic. Cuando se hace clic en el botón, 
+            //se elimina el elemento "registroElement" de la página web.
+            var eliminarBtn = document.createElement('button');
+            eliminarBtn.textContent = 'Eliminar';
+            eliminarBtn.addEventListener('click', function () {
+              registroElement.remove();
+            });
+            function eliminarRegistro() {
+              // Con el disabled bloquea los eliminados
+              document.getElementById('nombre').disabled = true;
+              document.getElementById('apellido').disabled = true;
+              document.getElementById('email').disabled = true;
+              document.getElementById('telefono').disabled = true;
+
+              //Elimina el registro
+            }
+            registroElement.appendChild(eliminarBtn);
+
+
+            var modificarBtn = document.createElement('button');
+            modificarBtn.textContent = 'Modificar';
+            modificarBtn.addEventListener('click', function () {
+              var formularioModificacion = document.createElement('form');
+
+              var nombreInput = document.createElement('input');
+              nombreInput.type = 'text';
+              nombreInput.name = 'modificarNombre';
+              nombreInput.value = nombre; // Valor actual del nombre del registro
+              formularioModificacion.appendChild(nombreInput);
+
+              // Repite esto para cada campo que deseas modificar
+
+              // Actualiza el contenido del registroElement con el formulario de modificación
+              registroElement.innerHTML = '';
+              registroElement.appendChild(formularioModificacion);
+              // Aquí puedes implementar la lógica para modificar el registro
+              // Puedes mostrar un formulario con los valores actuales y permitir que el usuario los edite
+              // Luego, actualizas el registro con los nuevos valores
+            });
+            registroElement.appendChild(modificarBtn);
+
+            return registroElement;
+          }
+
+          // Agrega un controlador de eventos al botón de registro
+          document.getElementById('btn').addEventListener('click', function () {
+            // Obtén los valores de los campos de entrada
+            var nombre = document.getElementById('Nombre').value;
+            var apellido = document.getElementById('Apellido').value;
+            var email = document.getElementsByName('email')[0].value;
+            var phone = document.getElementsByName('phone')[0].value;
+            var age = document.getElementsByName('age')[0].value;
+            var week = document.getElementsByName('week')[0].value;
+            var month = document.getElementsByName('month')[0].value;
+
+            // Crea un nuevo elemento de registro
+            var registroElement = crearRegistroElement(nombre, apellido, email, phone, age, week, month);
+
+            // Agrega el registro al contenedor de registros
+            registrosContainer.appendChild(registroElement);
+
+            // Restablece los valores de los campos de entrada
+            document.getElementById('Nombre').value = '';
+            document.getElementById('Apellido').value = '';
+            document.getElementsByName('email')[0].value = '';
+            document.getElementsByName('phone')[0].value = '';
+            document.getElementsByName('age')[0].value = '';
+            document.getElementsByName('week')[0].value = '';
+            document.getElementsByName('month')[0].value = '';
+          });
+        </script>
+
         <a href="https://www.facebook.com/CafeGoldChile" style="color:#b37736">
           <i class="fab fa-facebook fa-2x"></i>
         </a>
@@ -243,11 +346,38 @@
           <i class="fab fa-instagram fa-2x"></i>
         </a>
       </div>
+
     </footer>
     <div>
-     
+
     </div>
+    <script src="assets/js/script.js"></script>
+    <script>
+      // Obtén una referencia a los botones de aumento de fuente y contraste
+      var aumentarFuenteBtn = document.getElementById('aumentarFuenteBtn');
+      
+      
+      // Agrega un controlador de eventos para el botón de aumento de fuente
+      aumentarFuenteBtn.addEventListener('click', function() {
+        aumentarTamanioFuente();
+      });
+      
+     
+      
+      // Función para aumentar el tamaño de la fuente
+      function aumentarTamanioFuente() {
+        // Obtén el tamaño actual de la fuente del cuerpo de la página
+        var estiloActual = window.getComputedStyle(document.body);
+        var tamañoActual = parseInt(estiloActual.fontSize);
+      
+        // Aumenta el tamaño de la fuente en un valor específico 
+        var nuevoTamanio = tamañoActual + 2;
+        document.body.style.fontSize = nuevoTamanio + 'px';
+      }
+      
+    </script>
     
+
 </body>
 
 </html>
